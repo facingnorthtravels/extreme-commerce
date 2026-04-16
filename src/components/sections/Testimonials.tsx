@@ -213,9 +213,9 @@ export function Testimonials() {
                     <div className="relative h-full flex flex-col justify-between p-7">
                       {/* Top: stars + quote */}
                       <div>
-                        <div className="flex gap-1 mb-4">
+                        <div className="flex gap-1.5 mb-6">
                           {Array.from({ length: 5 }).map((_, j) => (
-                            <Star key={j} className={`h-4 w-4 fill-current ${s.star}`} />
+                            <Star key={j} className={`h-6 w-6 fill-current ${s.star}`} />
                           ))}
                         </div>
                         <blockquote className={`font-display text-lg sm:text-xl tracking-tight leading-snug text-pretty ${s.quote}`}>
@@ -243,11 +243,12 @@ export function Testimonials() {
                   <div className={`absolute inset-0 rounded-3xl [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden ${s.card}`}>
                     <div className="relative h-full flex flex-col justify-between p-7">
 
-                      {/* Row 1: eyebrow + marketplace badge */}
+                      {/* Row 1: name + marketplace badge */}
                       <div className="flex items-center justify-between">
-                        <span className={`font-display text-[10px] tracking-[0.22em] uppercase ${s.eyebrow}`}>
-                          Account Overview
-                        </span>
+                        <div>
+                          <div className="font-bold text-base leading-tight">{t.name}</div>
+                          <div className={`text-xs mt-0.5 ${s.sub}`}>{t.role}</div>
+                        </div>
                         <span className={`text-xs font-semibold px-3 py-1 rounded-full ${s.badge}`}>
                           {t.account.marketplace}
                         </span>
@@ -256,14 +257,14 @@ export function Testimonials() {
                       {/* Row 2: stats */}
                       <div className="flex items-stretch gap-6">
                         <div>
-                          <div className={`font-display text-3xl font-black leading-none tracking-tight ${s.statNum}`}>
+                          <div className={`font-display text-4xl font-black leading-none tracking-tight ${s.statNum}`}>
                             {t.account.revenue}
                           </div>
                           <div className={`text-xs mt-1 ${s.statLabel}`}>Monthly revenue</div>
                         </div>
                         <div className={`w-px self-stretch ${s.statDivider}`} />
                         <div>
-                          <div className={`font-display text-3xl font-black leading-none tracking-tight ${s.statNum}`}>
+                          <div className={`font-display text-4xl font-black leading-none tracking-tight ${s.statNum}`}>
                             {t.account.roi}
                           </div>
                           <div className={`text-xs mt-1 ${s.statLabel}`}>ROI achieved</div>
