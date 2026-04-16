@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Elite Program", href: "#elite" },
-  { label: "How It Works", href: "#process" },
-  { label: "About", href: "#founder" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services", href: "/#services" },
+  { label: "Elite Program", href: "/elite" },
+  { label: "How It Works", href: "/#process" },
+  { label: "About", href: "/#founder" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Nav() {
