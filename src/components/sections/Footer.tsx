@@ -41,7 +41,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-brand-navy-800 text-white overflow-hidden">
+    <footer className="relative bg-brand-navy-800 text-white overflow-hidden -mt-px">
 
       {/* eX watermark — same style as Hero */}
       <div
