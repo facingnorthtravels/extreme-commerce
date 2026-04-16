@@ -84,33 +84,54 @@ const testimonials = [
   },
 ];
 
-const accentStyles = {
+const S = {
   navy: {
     card: "bg-brand-navy text-white",
     star: "text-brand-yellow",
-    avatar: "bg-white/15 text-white border border-white/20",
-    sub: "text-white/60",
-    tag: "bg-white/10 text-white/80",
-    check: "text-brand-yellow",
-    divider: "bg-white/20",
+    quote: "text-white",
+    sub: "text-white/55",
+    divider: "bg-white/10",
+    avatar: "bg-white/10 border border-white/15 text-white",
+    badge: "bg-white/10 text-white/80 border border-white/15",
+    statNum: "text-white",
+    statLabel: "text-white/50",
+    statDivider: "bg-white/15",
+    checkIcon: "text-brand-yellow",
+    deliverItem: "text-white/85",
+    catText: "text-white/45",
+    eyebrow: "text-brand-yellow",
   },
   yellow: {
     card: "bg-brand-yellow text-brand-navy",
     star: "text-brand-navy",
-    avatar: "bg-brand-navy text-brand-yellow",
-    sub: "text-brand-navy/60",
-    tag: "bg-brand-navy/10 text-brand-navy/80",
-    check: "text-brand-navy",
-    divider: "bg-brand-navy/20",
+    quote: "text-brand-navy",
+    sub: "text-brand-navy/55",
+    divider: "bg-brand-navy/10",
+    avatar: "bg-brand-navy text-brand-yellow border-0",
+    badge: "bg-brand-navy/10 text-brand-navy/80 border border-brand-navy/15",
+    statNum: "text-brand-navy",
+    statLabel: "text-brand-navy/50",
+    statDivider: "bg-brand-navy/15",
+    checkIcon: "text-brand-navy",
+    deliverItem: "text-brand-navy/85",
+    catText: "text-brand-navy/45",
+    eyebrow: "text-brand-navy",
   },
   azure: {
     card: "bg-brand-azure text-white",
     star: "text-brand-yellow",
-    avatar: "bg-white/15 text-white border border-white/20",
-    sub: "text-white/60",
-    tag: "bg-white/10 text-white/80",
-    check: "text-brand-yellow",
-    divider: "bg-white/20",
+    quote: "text-white",
+    sub: "text-white/55",
+    divider: "bg-white/10",
+    avatar: "bg-white/10 border border-white/15 text-white",
+    badge: "bg-white/10 text-white/80 border border-white/15",
+    statNum: "text-white",
+    statLabel: "text-white/50",
+    statDivider: "bg-white/15",
+    checkIcon: "text-brand-yellow",
+    deliverItem: "text-white/85",
+    catText: "text-white/45",
+    eyebrow: "text-brand-yellow",
   },
 };
 
@@ -120,7 +141,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
 
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,20 +177,18 @@ export function Testimonials() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-2 text-[11px] text-brand-navy/35 font-display tracking-[0.18em]"
+            className="mt-2 text-[10px] text-brand-navy/30 font-display tracking-[0.2em] uppercase"
           >
-            HOVER CARDS TO SEE ACCOUNT DETAILS
+            Hover cards to see account details
           </motion.p>
         </div>
 
-        {/* Cards grid */}
-        <div className="mt-6 grid sm:grid-cols-2 gap-4">
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 gap-4">
           {testimonials.map((t, i) => {
-            const s = accentStyles[t.accent];
-            const initials = t.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("");
+            const s = S[t.accent];
+            const initials = t.name.split(" ").map((n) => n[0]).join("");
+
             return (
               <motion.div
                 key={i}
@@ -179,96 +198,99 @@ export function Testimonials() {
                 transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
                 className="group [perspective:1200px]"
               >
-                {/* Flip container */}
-                <div className="relative h-[230px] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative h-[260px] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                   {/* ── FRONT ── */}
-                  <div
-                    className={`absolute inset-0 rounded-3xl p-5 [backface-visibility:hidden] overflow-hidden ${s.card}`}
-                  >
-                    {/* Giant quote watermark */}
+                  <div className={`absolute inset-0 rounded-3xl [backface-visibility:hidden] overflow-hidden ${s.card}`}>
+                    {/* Decorative giant quote */}
                     <span
                       aria-hidden
-                      className="absolute -top-2 right-4 font-display text-[8rem] leading-none opacity-[0.08] pointer-events-none select-none"
+                      className="absolute -top-6 right-5 font-display text-[9rem] leading-none opacity-[0.07] pointer-events-none select-none"
                     >
                       &ldquo;
                     </span>
 
-                    <div className={`flex gap-0.5 mb-3`}>
-                      {Array.from({ length: 5 }).map((_, j) => (
-                        <Star key={j} className={`h-3.5 w-3.5 fill-current ${s.star}`} />
-                      ))}
-                    </div>
-
-                    <blockquote className="relative font-display text-sm sm:text-base tracking-tight leading-snug text-pretty">
-                      &ldquo;{t.quote}&rdquo;
-                    </blockquote>
-
-                    <div className="relative mt-4 flex items-center gap-3">
-                      <div
-                        className={`flex h-9 w-9 flex-none items-center justify-center rounded-full font-bold text-sm ${s.avatar}`}
-                      >
-                        {initials}
-                      </div>
+                    <div className="relative h-full flex flex-col justify-between p-7">
+                      {/* Top: stars + quote */}
                       <div>
-                        <div className="font-semibold text-sm">{t.name}</div>
-                        <div className={`text-xs ${s.sub}`}>{t.role}</div>
+                        <div className="flex gap-1 mb-4">
+                          {Array.from({ length: 5 }).map((_, j) => (
+                            <Star key={j} className={`h-4 w-4 fill-current ${s.star}`} />
+                          ))}
+                        </div>
+                        <blockquote className={`font-display text-lg sm:text-xl tracking-tight leading-snug text-pretty ${s.quote}`}>
+                          &ldquo;{t.quote}&rdquo;
+                        </blockquote>
+                      </div>
+
+                      {/* Bottom: divider + person */}
+                      <div>
+                        <div className={`h-px w-full mb-4 ${s.divider}`} />
+                        <div className="flex items-center gap-3">
+                          <div className={`flex h-10 w-10 flex-none items-center justify-center rounded-full font-bold text-sm ${s.avatar}`}>
+                            {initials}
+                          </div>
+                          <div>
+                            <div className="font-semibold text-[15px] leading-tight">{t.name}</div>
+                            <div className={`text-xs mt-0.5 ${s.sub}`}>{t.role}</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* ── BACK ── */}
-                  <div
-                    className={`absolute inset-0 rounded-3xl p-5 [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden ${s.card}`}
-                  >
-                    <div className="h-full flex flex-col justify-between">
+                  <div className={`absolute inset-0 rounded-3xl [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden ${s.card}`}>
+                    <div className="relative h-full flex flex-col justify-between p-7">
+
+                      {/* Row 1: eyebrow + marketplace badge */}
+                      <div className="flex items-center justify-between">
+                        <span className={`font-display text-[10px] tracking-[0.22em] uppercase ${s.eyebrow}`}>
+                          Account Overview
+                        </span>
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${s.badge}`}>
+                          {t.account.marketplace}
+                        </span>
+                      </div>
+
+                      {/* Row 2: stats */}
+                      <div className="flex items-stretch gap-6">
+                        <div>
+                          <div className={`font-display text-3xl font-black leading-none tracking-tight ${s.statNum}`}>
+                            {t.account.revenue}
+                          </div>
+                          <div className={`text-xs mt-1 ${s.statLabel}`}>Monthly revenue</div>
+                        </div>
+                        <div className={`w-px self-stretch ${s.statDivider}`} />
+                        <div>
+                          <div className={`font-display text-3xl font-black leading-none tracking-tight ${s.statNum}`}>
+                            {t.account.roi}
+                          </div>
+                          <div className={`text-xs mt-1 ${s.statLabel}`}>ROI achieved</div>
+                        </div>
+                      </div>
+
+                      {/* Row 3: deliverables */}
                       <div>
-                        {/* Header row */}
-                        <div className="flex items-center justify-between mb-3">
-                          <span className={`font-display text-[10px] tracking-[0.22em] ${s.star}`}>
-                            ACCOUNT OVERVIEW
-                          </span>
-                          <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${s.tag}`}>
-                            {t.account.marketplace}
-                          </span>
+                        <div className={`font-display text-[10px] tracking-[0.2em] uppercase mb-2 ${s.statLabel}`}>
+                          What We Delivered
                         </div>
-
-                        {/* Stats row */}
-                        <div className="flex items-center gap-4 mb-3">
-                          <div>
-                            <div className="font-display text-2xl font-black leading-none">
-                              {t.account.revenue}
-                            </div>
-                            <div className={`text-xs mt-0.5 ${s.sub}`}>Monthly revenue</div>
-                          </div>
-                          <div className={`h-8 w-px ${s.divider}`} />
-                          <div>
-                            <div className="font-display text-2xl font-black leading-none">
-                              {t.account.roi}
-                            </div>
-                            <div className={`text-xs mt-0.5 ${s.sub}`}>ROI achieved</div>
-                          </div>
-                        </div>
-
-                        {/* Deliverables */}
-                        <div className={`text-[10px] font-display tracking-[0.18em] mb-1.5 ${s.sub}`}>
-                          WHAT WE DELIVERED
-                        </div>
-                        <ul className="space-y-1">
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
                           {t.account.deliverables.map((d, j) => (
-                            <li key={j} className="flex items-center gap-2 text-sm leading-tight">
-                              <CheckCircle2 className={`h-3.5 w-3.5 flex-none ${s.check}`} />
+                            <li key={j} className={`flex items-center gap-2 text-sm leading-tight ${s.deliverItem}`}>
+                              <CheckCircle2 className={`h-3.5 w-3.5 flex-none shrink-0 ${s.checkIcon}`} />
                               {d}
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      {/* Category footer */}
-                      <div className={`flex items-center gap-1.5 text-xs ${s.sub}`}>
+                      {/* Row 4: category footer */}
+                      <div className={`flex items-center gap-1.5 text-xs ${s.catText}`}>
                         <Package className="h-3 w-3" />
-                        {t.account.category}
+                        <span>{t.account.category}</span>
                       </div>
+
                     </div>
                   </div>
 
