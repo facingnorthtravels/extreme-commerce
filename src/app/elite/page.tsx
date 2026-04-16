@@ -168,12 +168,12 @@ const notForYou = [
 
 export function EliteQualifier() {
   return (
-    <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-white py-10 sm:py-14 overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-navy opacity-30 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +189,7 @@ export function EliteQualifier() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-brand-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-brand-navy text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             Honest about who
             <br />
@@ -215,15 +215,15 @@ export function EliteQualifier() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="relative rounded-3xl bg-brand-navy p-8 sm:p-10 overflow-hidden"
+            className="relative rounded-3xl bg-brand-navy p-6 sm:p-8 overflow-hidden"
           >
             <div className="absolute -right-10 -top-10 font-display text-[14rem] leading-none text-white/[0.04] pointer-events-none select-none">✓</div>
             <div className="relative">
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-yellow/15 border border-brand-yellow/30 px-4 py-1.5 mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-yellow/15 border border-brand-yellow/30 px-4 py-1.5 mb-5">
                 <Check className="h-3.5 w-3.5 text-brand-yellow" strokeWidth={3} />
                 <span className="font-display text-xs tracking-[0.2em] text-brand-yellow">BUILT FOR YOU IF...</span>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {forYou.map((item, i) => (
                   <motion.li
                     key={i}
@@ -249,15 +249,15 @@ export function EliteQualifier() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
-            className="relative rounded-3xl border-2 border-brand-navy/10 bg-white p-8 sm:p-10 overflow-hidden"
+            className="relative rounded-3xl border-2 border-brand-navy/10 bg-white p-6 sm:p-8 overflow-hidden"
           >
             <div className="absolute -right-10 -top-10 font-display text-[14rem] leading-none text-brand-navy/[0.04] pointer-events-none select-none">✗</div>
             <div className="relative">
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-navy/5 border border-brand-navy/10 px-4 py-1.5 mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-navy/5 border border-brand-navy/10 px-4 py-1.5 mb-5">
                 <X className="h-3.5 w-3.5 text-brand-navy/50" strokeWidth={3} />
                 <span className="font-display text-xs tracking-[0.2em] text-brand-navy/60">NOT THE RIGHT FIT IF...</span>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {notForYou.map((item, i) => (
                   <motion.li
                     key={i}
@@ -313,13 +313,13 @@ export function EliteModel() {
   const lineWidth = useTransform(scrollYProgress, [0.1, 0.6], ["0%", "100%"]);
 
   return (
-    <section id="model" className="relative bg-brand-navy text-white py-24 sm:py-32 overflow-hidden texture-grain">
+    <section id="model" className="relative bg-brand-navy text-white py-10 sm:py-14 overflow-hidden texture-grain">
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(54,128,195,0.15),transparent_50%)]" />
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -335,7 +335,7 @@ export function EliteModel() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-white text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             Capital in. Profit out.
             <br />
@@ -391,11 +391,11 @@ export function EliteModel() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="mt-20 grid lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-12 items-center max-w-5xl mx-auto"
+          className="mt-10 grid lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-12 items-center max-w-5xl mx-auto"
         >
           {/* Your share */}
-          <div className="rounded-3xl bg-brand-yellow p-8 sm:p-10 text-brand-navy text-center">
-            <div className="font-display text-8xl sm:text-9xl leading-none tracking-tight">80%</div>
+          <div className="rounded-3xl bg-brand-yellow p-5 sm:p-6 text-brand-navy text-center">
+            <div className="font-display text-6xl sm:text-7xl leading-none tracking-tight">80%</div>
             <div className="mt-3 font-bold text-xl">Your profit share</div>
             <div className="mt-2 text-brand-navy/70 text-sm leading-relaxed">
               Paid directly to you. No delays, no ambiguity. Every dollar above the ROI threshold is tracked and distributed.
@@ -410,8 +410,8 @@ export function EliteModel() {
           </div>
 
           {/* Our share */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center">
-            <div className="font-display text-8xl sm:text-9xl leading-none tracking-tight text-brand-azure">20%</div>
+          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 sm:p-6 text-center">
+            <div className="font-display text-6xl sm:text-7xl leading-none tracking-tight text-brand-azure">20%</div>
             <div className="mt-3 font-bold text-xl text-white">Our performance fee</div>
             <div className="mt-2 text-white/50 text-sm leading-relaxed">
               We earn nothing until your ROI crosses 50%. Our upside is tied to your success — not your fees.
@@ -527,12 +527,12 @@ export function EliteTimeline() {
   const lineHeight = useTransform(scrollYProgress, [0.05, 0.9], ["0%", "100%"]);
 
   return (
-    <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-white py-10 sm:py-14 overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-navy opacity-25 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -548,7 +548,7 @@ export function EliteTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-brand-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-brand-navy text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             You always know
             <br />
@@ -724,7 +724,7 @@ export function EliteHandled() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative bg-brand-navy text-white py-24 sm:py-32 overflow-hidden texture-grain">
+    <section className="relative bg-brand-navy text-white py-10 sm:py-14 overflow-hidden texture-grain">
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(244,205,29,0.1),transparent_50%)]" />
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
@@ -748,7 +748,7 @@ export function EliteHandled() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-              className="mt-5 font-black tracking-tight text-white text-4xl sm:text-5xl leading-[1.02]"
+              className="mt-5 font-black tracking-tight text-white text-3xl sm:text-4xl leading-[1.05]"
             >
               Everything.
               <br />
@@ -771,9 +771,9 @@ export function EliteHandled() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
-              className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6"
+              className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4"
             >
-              <div className="font-display text-6xl text-brand-yellow leading-none">30+</div>
+              <div className="font-display text-5xl text-brand-yellow leading-none">30+</div>
               <div className="mt-2 text-white/70 text-sm">distinct operational tasks across all four phases — all included, all handled.</div>
             </motion.div>
           </div>
@@ -904,12 +904,12 @@ const scenarios = [
 
 export function EliteMath() {
   return (
-    <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-white py-10 sm:py-14 overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-navy opacity-25 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -925,7 +925,7 @@ export function EliteMath() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-brand-navy text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-brand-navy text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             What $21K deployed
             <br />
@@ -975,7 +975,7 @@ export function EliteMath() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
-              className={`relative rounded-3xl border p-7 sm:p-8 ${s.color} ${s.featured ? "shadow-2xl shadow-brand-navy/20 scale-[1.02] z-10" : ""}`}
+              className={`relative rounded-3xl border p-5 sm:p-6 ${s.color} ${s.featured ? "shadow-2xl shadow-brand-navy/20 scale-[1.02] z-10" : ""}`}
             >
               {s.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-yellow px-4 py-1 text-xs font-bold text-brand-navy whitespace-nowrap">
@@ -1094,13 +1094,13 @@ const accentStyles = {
 
 export function EliteLaunches() {
   return (
-    <section className="relative bg-brand-navy text-white py-24 sm:py-32 overflow-hidden texture-grain">
+    <section className="relative bg-brand-navy text-white py-10 sm:py-14 overflow-hidden texture-grain">
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(54,128,195,0.12),transparent_50%)]" />
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1116,7 +1116,7 @@ export function EliteLaunches() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-white text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             Real launches.
             <br />
@@ -1246,10 +1246,10 @@ export function EliteFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="relative bg-white py-24 sm:py-32 border-t border-brand-navy/5">
+    <section className="relative bg-white py-10 sm:py-14">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1265,7 +1265,7 @@ export function EliteFAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
-            className="mt-5 font-black tracking-tight text-brand-navy text-4xl sm:text-5xl leading-[1.02] text-balance"
+            className="mt-5 font-black tracking-tight text-brand-navy text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] text-balance"
           >
             The questions investors
             <br />
