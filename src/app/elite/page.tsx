@@ -6,7 +6,6 @@ import { Counter } from "@/components/ui/Counter";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { useRef, useState } from "react";
-import type { Metadata } from "next";
 import { Nav } from "@/components/sections/Nav";
 import { Footer } from "@/components/sections/Footer";
 
@@ -1462,11 +1461,6 @@ export function EliteCTA() {
   );
 }
 
-
-export const metadata: Metadata = {
-  title: "Elite Program — Done-For-You Amazon Business",
-  description: "Three Amazon launches. $7K per launch. 80% profit to you. Done-for-you Amazon business.",
-};
 
 export default function ElitePage() {
   return (
