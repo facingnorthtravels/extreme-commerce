@@ -97,7 +97,7 @@ export function Hero() {
                     className="absolute left-0 -bottom-1 h-[5px] w-full bg-brand-yellow/20 origin-left rounded-full -z-10"
                   />
                 </span>{" "}
-                Amazon
+                Amazon brand.
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ export function Hero() {
                 transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
                 className="block text-white"
               >
-                brand. With us.
+                With us.
               </motion.span>
             </h1>
 
