@@ -23,7 +23,7 @@ export function EliteHero() {
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[100svh] flex items-center bg-brand-navy text-white overflow-hidden texture-grain pt-28 pb-20"
+      className="relative isolate min-h-screen flex items-center bg-brand-navy text-white overflow-hidden texture-grain pt-24 pb-10"
     >
       {/* Backgrounds */}
       <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(244,205,29,0.18),transparent)]" />
@@ -49,7 +49,7 @@ export function EliteHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="inline-flex items-center gap-3 rounded-full border border-brand-yellow/30 bg-brand-yellow/10 backdrop-blur-sm px-5 py-2 mb-10"
+            className="inline-flex items-center gap-3 rounded-full border border-brand-yellow/30 bg-brand-yellow/10 backdrop-blur-sm px-5 py-2 mb-6"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-yellow opacity-70" />
@@ -61,22 +61,22 @@ export function EliteHero() {
           </motion.div>
 
           {/* Main headline */}
-          <div className="overflow-hidden mb-4">
+          <div className="overflow-hidden mb-2">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
-              className="font-display text-[4.5rem] sm:text-[7rem] lg:text-[9.5rem] xl:text-[11rem] leading-none tracking-tight text-white"
+              className="font-display text-[3rem] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] leading-none tracking-tight text-white"
             >
               This is not
             </motion.h1>
           </div>
-          <div className="overflow-hidden mb-8">
+          <div className="overflow-hidden mb-5">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
-              className="font-display text-[4.5rem] sm:text-[7rem] lg:text-[9.5rem] xl:text-[11rem] leading-none tracking-tight text-brand-yellow"
+              className="font-display text-[3rem] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] leading-none tracking-tight text-brand-yellow"
             >
               a course.
             </motion.h1>
@@ -87,7 +87,7 @@ export function EliteHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.6 }}
-            className="text-xl sm:text-2xl lg:text-3xl text-white/70 font-light leading-snug text-pretty max-w-3xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-white/70 font-light leading-snug text-pretty max-w-3xl mx-auto"
           >
             It&rsquo;s a <span className="text-white font-semibold">fully-operated Amazon business</span> — researched,
             launched, and scaled by our team. Built in your name. You keep 80% of the profit.
@@ -98,7 +98,7 @@ export function EliteHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.8 }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-4"
+            className="mt-7 flex flex-wrap items-center justify-center gap-4"
           >
             <Button href="#apply" size="lg" variant="primary" arrow>
               Apply for Elite
@@ -113,7 +113,7 @@ export function EliteHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.1 }}
-            className="mt-16 grid grid-cols-3 max-w-lg mx-auto gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10"
+            className="mt-8 grid grid-cols-3 max-w-lg mx-auto gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10"
           >
             {[
               { k: "3", v: "Launches" },
@@ -133,7 +133,7 @@ export function EliteHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.8 }}
-          className="mt-20 flex flex-col items-center gap-2 text-white/30"
+          className="mt-6 flex flex-col items-center gap-2 text-white/30"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
