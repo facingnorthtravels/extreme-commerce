@@ -198,7 +198,7 @@ export function Testimonials() {
                 transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
                 className="group [perspective:1200px]"
               >
-                <div className="relative h-[260px] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative h-[260px] transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                   {/* ── FRONT ── */}
                   <div className={`absolute inset-0 rounded-3xl [backface-visibility:hidden] overflow-hidden ${s.card}`}>
