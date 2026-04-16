@@ -103,7 +103,7 @@ const tagStyles = {
 
 export function Services() {
   return (
-    <section id="services" className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section id="services" className="relative bg-white py-10 sm:py-14 overflow-hidden">
       {/* Subtle grid */}
       <div
         aria-hidden
@@ -123,7 +123,7 @@ export function Services() {
           subtitle="From done-for-you launches to trained virtual assistants — pick your level of involvement."
         />
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 sm:gap-5">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(148px,auto)] gap-3">
           {services.map((service, i) => {
             const Icon = service.icon;
             const variant = service.variant as keyof typeof variantStyles;
@@ -143,7 +143,7 @@ export function Services() {
                 <Link
                   href={service.href}
                   className={cn(
-                    "relative flex flex-col h-full rounded-3xl border p-7 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 overflow-hidden",
+                    "relative flex flex-col h-full rounded-3xl border p-4 sm:p-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 overflow-hidden",
                     variantStyles[variant]
                   )}
                 >
@@ -180,10 +180,10 @@ export function Services() {
                     </span>
                   </div>
 
-                  <div className="relative mt-auto pt-10">
+                  <div className="relative mt-auto pt-4">
                     <Icon
                       className={cn(
-                        "h-8 w-8 mb-5",
+                        "h-6 w-6 mb-2",
                         variant === "featured"
                           ? "text-brand-yellow"
                           : variant === "azure"
@@ -198,15 +198,15 @@ export function Services() {
                       className={cn(
                         "font-black tracking-tight leading-[1.05]",
                         service.variant === "featured"
-                          ? "text-3xl sm:text-4xl lg:text-5xl"
-                          : "text-2xl sm:text-[28px]"
+                          ? "text-2xl sm:text-3xl lg:text-4xl"
+                          : "text-xl sm:text-2xl"
                       )}
                     >
                       {service.title}
                     </h3>
                     <p
                       className={cn(
-                        "mt-3 text-[15px] leading-relaxed text-pretty max-w-md",
+                        "mt-1.5 text-sm leading-snug text-pretty max-w-md",
                         variant === "featured" || variant === "azure"
                           ? "text-white/70"
                           : "text-brand-navy/70"
@@ -216,7 +216,7 @@ export function Services() {
                     </p>
 
                     {service.bullets && (
-                      <ul className="mt-6 space-y-2">
+                      <ul className="mt-2 space-y-1">
                         {service.bullets.map((bullet) => (
                           <li
                             key={bullet}
