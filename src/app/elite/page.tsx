@@ -1343,7 +1343,8 @@ export function EliteCTA() {
     <section
       id="apply"
       ref={ref}
-      className="relative bg-brand-navy text-white py-24 sm:py-40 overflow-hidden texture-grain"
+      className="relative text-white py-14 sm:py-20 overflow-hidden texture-grain"
+      style={{ background: "linear-gradient(180deg, #022766 0%, #011d52 40%, #010f29 100%)", marginBottom: "-2px" }}
     >
       {/* Backgrounds */}
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(244,205,29,0.18),transparent_60%)]" />
@@ -1375,7 +1376,7 @@ export function EliteCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
-          className="font-black tracking-tight leading-[0.95] text-5xl sm:text-6xl lg:text-7xl text-balance"
+          className="font-black tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-6xl text-balance"
         >
           Ready to stop
           <br />
@@ -1407,7 +1408,7 @@ export function EliteCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.4 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <Button href="#" size="lg" variant="primary" arrow>
             Book Your Discovery Call
@@ -1423,7 +1424,7 @@ export function EliteCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.55 }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
+          className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           {[
             {
