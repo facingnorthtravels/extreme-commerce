@@ -125,7 +125,7 @@ export function Footer() {
         </div>
 
         {/* Meta row */}
-        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40">
+        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2 text-xs text-white/40">
           <div>© {new Date().getFullYear()} Extreme Commerce. All rights reserved.</div>
           <div className="flex items-center gap-5">
             <Link href="#" className="hover:text-white transition">Privacy</Link>

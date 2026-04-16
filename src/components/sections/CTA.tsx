@@ -36,12 +36,14 @@ export function CTA() {
       </motion.div>
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
-      {/* Angled gradient blending into footer */}
+      {/* Premium gradient blending into footer — covers bottom 55% of section */}
       <div
         aria-hidden
-        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
-          background: "linear-gradient(175deg, transparent 0%, #010f29 100%)",
+          height: "55%",
+          background:
+            "linear-gradient(172deg, transparent 0%, rgba(1,15,41,0.45) 40%, rgba(1,15,41,0.85) 70%, #010f29 100%)",
         }}
       />
 
@@ -112,7 +114,7 @@ export function CTA() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mt-10 grid grid-cols-3 gap-4 max-w-2xl mx-auto border-t border-white/10 pt-8"
+            className="mt-10 grid grid-cols-3 gap-4 max-w-2xl mx-auto"
           >
             {[
               { k: "30-min", v: "Discovery call" },
