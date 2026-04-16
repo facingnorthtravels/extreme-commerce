@@ -69,7 +69,7 @@ const services = [
       "Conversion-first A+ content, storefronts, and imagery built from market data.",
     href: "#services",
     icon: Megaphone,
-    span: "lg:col-span-1",
+    span: "lg:col-span-2",
     variant: "outline",
   },
   {
@@ -79,7 +79,7 @@ const services = [
       "Weekly reports. Monthly strategy calls. Decision memos. No blind spots.",
     href: "#services",
     icon: BarChart3,
-    span: "lg:col-span-1",
+    span: "lg:col-span-2",
     variant: "outline",
   },
 ];
@@ -123,7 +123,7 @@ export function Services() {
           subtitle="From done-for-you launches to trained virtual assistants — pick your level of involvement."
         />
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(220px,auto)] gap-4 sm:gap-5">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 sm:gap-5">
           {services.map((service, i) => {
             const Icon = service.icon;
             const variant = service.variant as keyof typeof variantStyles;
