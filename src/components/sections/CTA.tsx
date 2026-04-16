@@ -18,7 +18,10 @@ export function CTA() {
     <section
       id="contact"
       ref={ref}
-      className="relative bg-brand-navy text-white py-14 sm:py-20 overflow-hidden texture-grain"
+      className="relative text-white py-14 sm:py-20 overflow-hidden texture-grain"
+      style={{
+        background: "linear-gradient(170deg, #022766 0%, #011d52 35%, #010f29 100%)",
+      }}
     >
       {/* Backgrounds */}
       <div
@@ -36,16 +39,6 @@ export function CTA() {
       </motion.div>
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
-      {/* Premium gradient blending into footer — covers bottom 55% of section */}
-      <div
-        aria-hidden
-        className="absolute bottom-0 left-0 right-0 pointer-events-none"
-        style={{
-          height: "55%",
-          background:
-            "linear-gradient(172deg, transparent 0%, rgba(1,15,41,0.45) 40%, rgba(1,15,41,0.85) 70%, #010f29 100%)",
-        }}
-      />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
