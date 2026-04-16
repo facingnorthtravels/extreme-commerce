@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors — Extreme Commerce */
+  --color-brand-navy: #022766;
+  --color-brand-navy-50: #e6eaf2;
+  --color-brand-navy-100: #b3bfd8;
+  --color-brand-navy-200: #8093be;
+  --color-brand-navy-300: #4d68a3;
+  --color-brand-navy-400: #1a3c89;
+  --color-brand-navy-500: #022766;
+  --color-brand-navy-600: #021f52;
+  --color-brand-navy-700: #01173d;
+  --color-brand-navy-800: #010f29;
+  --color-brand-navy-900: #000814;
+  --color-brand-navy-950: #000409;
+
+  --color-brand-azure: #3680c3;
+  --color-brand-azure-light: #5b9ad6;
+  --color-brand-azure-dark: #2668a0;
+
+  --color-brand-yellow: #f4cd1d;
+  --color-brand-yellow-light: #f7dc58;
+  --color-brand-yellow-dark: #d4b00a;
+
+  --color-brand-white: #ffffff;
+
+  /* Fonts */
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-bebas);
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Container */
+  --container-8xl: 90rem;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #022766;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #f4cd1d;
+  color: #022766;
+}
+
+/* Marquee keyframes */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 80s linear infinite;
+}
+
+.animate-blob {
+  animation: blob 22s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Grain/noise texture overlay */
+.texture-grain {
+  position: relative;
+}
+.texture-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Grid pattern */
+.bg-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.bg-grid-navy {
+  background-image: linear-gradient(rgba(2, 39, 102, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 39, 102, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Bebas Neue display helper */
+.font-display {
+  font-family: var(--font-display), "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.01em;
+}
