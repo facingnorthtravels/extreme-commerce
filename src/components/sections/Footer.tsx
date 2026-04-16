@@ -41,26 +41,38 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-brand-navy-800 text-white border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-        <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-12">
+    <footer className="relative bg-brand-navy-800 text-white border-t border-white/10 overflow-hidden">
+
+      {/* eX watermark — same style as Hero */}
+      <div
+        aria-hidden
+        className="absolute -right-16 sm:-right-24 bottom-8 pointer-events-none select-none -z-0"
+      >
+        <span className="font-display text-[14rem] sm:text-[20rem] lg:text-[26rem] leading-none text-white/[0.035] tracking-tighter">
+          eX
+        </span>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-12">
+        <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 lg:gap-10">
+
           {/* Brand column */}
           <div>
             <Logo variant="light" />
-            <p className="mt-6 text-white/60 text-[15px] leading-relaxed max-w-sm">
+            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-sm">
               We build and scale Amazon businesses for entrepreneurs, investors,
               and business owners. Practical, outcome-driven, no fluff.
             </p>
 
             {/* Newsletter */}
-            <form className="mt-8 flex w-full max-w-sm items-center rounded-full bg-white/5 border border-white/10 backdrop-blur-sm p-1 focus-within:border-brand-yellow/50 transition">
-              <div className="flex items-center gap-2 pl-4 text-white/50 flex-1">
+            <form className="mt-5 flex w-full max-w-sm items-center rounded-full bg-white/5 border border-white/10 backdrop-blur-sm p-1 focus-within:border-brand-yellow/50 transition">
+              <div className="flex items-center gap-2 pl-3 text-white/50 flex-1">
                 <Mail className="h-4 w-4 flex-none" />
                 <input
                   type="email"
                   placeholder="Your email"
                   aria-label="Email"
-                  className="bg-transparent flex-1 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none"
+                  className="bg-transparent flex-1 py-2 text-sm text-white placeholder-white/40 focus:outline-none"
                 />
               </div>
               <button
@@ -71,7 +83,7 @@ export function Footer() {
               </button>
             </form>
 
-            <div className="mt-8 flex items-center gap-2">
+            <div className="mt-5 flex items-center gap-2">
               {[
                 { icon: LinkedInIcon, href: "#", label: "LinkedIn" },
                 { icon: InstagramIcon, href: "#", label: "Instagram" },
@@ -82,7 +94,7 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 hover:bg-brand-yellow hover:text-brand-navy hover:border-brand-yellow transition"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 hover:bg-brand-yellow hover:text-brand-navy hover:border-brand-yellow transition"
                 >
                   <Icon className="h-4 w-4" />
                 </Link>
@@ -93,15 +105,15 @@ export function Footer() {
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="font-display text-xs tracking-[0.2em] text-brand-yellow mb-5">
-                {col.title}
+              <h4 className="font-display text-xs tracking-[0.2em] text-brand-yellow mb-4">
+                {col.title.toUpperCase()}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-white/70 hover:text-white text-[15px] transition"
+                      className="text-white/60 hover:text-white text-sm transition"
                     >
                       {link.label}
                     </Link>
@@ -112,34 +124,17 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Giant brand wordmark */}
-        <div
-          aria-hidden
-          className="mt-20 overflow-hidden select-none pointer-events-none"
-        >
-          <div className="font-display text-[5.5rem] sm:text-[9rem] lg:text-[13rem] xl:text-[16rem] leading-none tracking-tighter whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(244,205,29,0.3)] text-center">
-            EXTREME COMMERCE
-          </div>
-        </div>
-
         {/* Meta row */}
-        <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/50">
-          <div>
-            © {new Date().getFullYear()} Extreme Commerce. All rights reserved.
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-white transition">
-              Privacy
-            </Link>
-            <Link href="#" className="hover:text-white transition">
-              Terms
-            </Link>
-            <Link href="#" className="hover:text-white transition">
-              Cookies
-            </Link>
+        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40">
+          <div>© {new Date().getFullYear()} Extreme Commerce. All rights reserved.</div>
+          <div className="flex items-center gap-5">
+            <Link href="#" className="hover:text-white transition">Privacy</Link>
+            <Link href="#" className="hover:text-white transition">Terms</Link>
+            <Link href="#" className="hover:text-white transition">Cookies</Link>
           </div>
         </div>
       </div>
+
     </footer>
   );
 }
