@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { Check, Rocket, Wallet, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -37,7 +36,7 @@ export function Elite() {
   return (
     <section
       id="elite"
-      className="relative bg-white py-24 sm:py-32 overflow-hidden"
+      className="relative bg-white py-10 sm:py-12 overflow-hidden"
     >
       {/* Decorative yellow accent bar */}
       <div className="absolute left-0 top-20 h-[2px] w-20 bg-brand-yellow" />
@@ -47,33 +46,51 @@ export function Elite() {
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
           {/* Left — narrative */}
           <div className="lg:sticky lg:top-32">
-            <SectionHeading
-              eyebrow="THE ELITE PROGRAM"
-              align="left"
-              title={
-                <>
-                  Turn capital into a
-                  <br />
-                  <span className="text-brand-azure">scalable Amazon</span>
-                  <br />
-                  income stream.
-                </>
-              }
-              subtitle="Designed for investors and business owners with capital to deploy. You bring the ambition — we run the operation end-to-end."
-            />
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, ease: EASE }}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-display text-xs tracking-[0.2em] mb-4 bg-brand-navy/5 text-brand-navy border border-brand-navy/10"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
+                THE ELITE PROGRAM
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, ease: EASE, delay: 0.05 }}
+                className="font-black tracking-tight text-brand-navy text-3xl sm:text-4xl lg:text-[44px] leading-[1.05]"
+              >
+                Turn capital into a{" "}
+                <span className="text-brand-azure">scalable Amazon</span>{" "}
+                income stream.
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, ease: EASE, delay: 0.12 }}
+                className="mt-3 text-base sm:text-lg leading-relaxed text-pretty text-brand-navy/70"
+              >
+                Designed for investors and business owners with capital to deploy. You bring the ambition — we run the operation end-to-end.
+              </motion.p>
+            </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-4">
+            <div className="mt-5 grid grid-cols-2 gap-3">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
-                className="rounded-2xl bg-brand-navy p-6 text-white"
+                className="rounded-2xl bg-brand-navy p-4 text-white"
               >
-                <div className="font-display text-5xl text-brand-yellow leading-none">
+                <div className="font-display text-4xl text-brand-yellow leading-none">
                   80%
                 </div>
-                <div className="mt-2 text-sm text-white/70">
+                <div className="mt-1.5 text-sm text-white/70">
                   Your share of profits
                 </div>
               </motion.div>
@@ -82,16 +99,16 @@ export function Elite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-                className="rounded-2xl bg-brand-yellow p-6 text-brand-navy"
+                className="rounded-2xl bg-brand-yellow p-4 text-brand-navy"
               >
-                <div className="font-display text-5xl leading-none">18mo</div>
-                <div className="mt-2 text-sm opacity-80">
+                <div className="font-display text-4xl leading-none">18mo</div>
+                <div className="mt-1.5 text-sm opacity-80">
                   Full launch cycle
                 </div>
               </motion.div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <Button href="#contact" size="lg" variant="secondary" arrow>
                 Apply for Elite
               </Button>
@@ -103,7 +120,7 @@ export function Elite() {
 
           {/* Right — what's included */}
           <div>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {inclusions.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -117,17 +134,17 @@ export function Elite() {
                       ease: EASE,
                       delay: i * 0.08,
                     }}
-                    className="group relative rounded-2xl border border-brand-navy/10 bg-white p-6 sm:p-7 hover:border-brand-navy/30 hover:shadow-xl hover:shadow-brand-navy/5 transition-all duration-500"
+                    className="group relative rounded-2xl border border-brand-navy/10 bg-white p-3 sm:p-4 hover:border-brand-navy/30 hover:shadow-xl hover:shadow-brand-navy/5 transition-all duration-500"
                   >
-                    <div className="flex items-start gap-5">
-                      <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-brand-navy text-brand-yellow group-hover:bg-brand-yellow group-hover:text-brand-navy transition-colors duration-500">
-                        <Icon className="h-5 w-5" strokeWidth={2} />
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-brand-navy text-brand-yellow group-hover:bg-brand-yellow group-hover:text-brand-navy transition-colors duration-500">
+                        <Icon className="h-4 w-4" strokeWidth={2} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-lg sm:text-xl text-brand-navy tracking-tight">
+                        <h3 className="font-bold text-base text-brand-navy tracking-tight">
                           {item.title}
                         </h3>
-                        <p className="mt-1.5 text-brand-navy/70 leading-relaxed text-[15px]">
+                        <p className="mt-0.5 text-brand-navy/70 leading-snug text-sm">
                           {item.detail}
                         </p>
                       </div>
@@ -143,23 +160,23 @@ export function Elite() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: EASE, delay: 0.5 }}
-              className="mt-6 relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-navy to-brand-navy-700 p-6 sm:p-8 text-white"
+              className="mt-2 relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-navy to-brand-navy-700 p-4 text-white"
             >
               <div className="absolute -right-8 -top-8 font-display text-[10rem] leading-none text-white/[0.05] pointer-events-none select-none">
                 eX
               </div>
-              <div className="relative flex items-start gap-4">
-                <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-yellow text-brand-navy">
-                  <Check className="h-5 w-5" strokeWidth={3} />
+              <div className="relative flex items-start gap-3">
+                <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-yellow text-brand-navy">
+                  <Check className="h-4 w-4" strokeWidth={3} />
                 </div>
                 <div>
-                  <div className="font-display text-sm tracking-[0.2em] text-brand-yellow">
+                  <div className="font-display text-xs tracking-[0.2em] text-brand-yellow">
                     ALIGNED INCENTIVES
                   </div>
-                  <h4 className="mt-2 font-bold text-xl sm:text-2xl tracking-tight">
+                  <h4 className="mt-1 font-bold text-lg tracking-tight">
                     We only earn when you profit.
                   </h4>
-                  <p className="mt-2 text-white/70 text-[15px] leading-relaxed">
+                  <p className="mt-1 text-white/70 text-sm leading-snug">
                     Our profit share only unlocks once your ROI crosses 50%.
                     Your success comes first — always.
                   </p>
