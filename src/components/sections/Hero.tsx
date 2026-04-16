@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate overflow-hidden bg-brand-navy text-white min-h-[100svh] flex items-center pt-32 pb-20 texture-grain"
+      className="relative isolate overflow-hidden bg-brand-navy text-white min-h-screen flex items-center pt-24 pb-12 texture-grain"
     >
       {/* Ambient gradients */}
       <div
@@ -80,36 +80,29 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="font-black tracking-tight text-balance leading-[0.95] text-5xl sm:text-6xl lg:text-7xl xl:text-[88px]">
+            <h1 className="font-black tracking-tight leading-[0.95] text-4xl sm:text-5xl lg:text-[56px] xl:text-[66px]">
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
                 className="block text-white"
               >
-                Build a
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
-                className="block"
-              >
+                Build a{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-brand-yellow">profitable</span>
                   <motion.span
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 1, ease: EASE, delay: 0.9 }}
-                    className="absolute left-0 -bottom-1 h-[6px] w-full bg-brand-yellow/20 origin-left rounded-full -z-10"
+                    className="absolute left-0 -bottom-1 h-[5px] w-full bg-brand-yellow/20 origin-left rounded-full -z-10"
                   />
                 </span>{" "}
-                <span className="text-white">Amazon</span>
+                Amazon
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
+                transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
                 className="block text-white"
               >
                 brand. With us.
