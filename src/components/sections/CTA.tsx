@@ -36,6 +36,15 @@ export function CTA() {
       </motion.div>
       <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
 
+      {/* Angled gradient blending into footer */}
+      <div
+        aria-hidden
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        style={{
+          background: "linear-gradient(175deg, transparent 0%, #010f29 100%)",
+        }}
+      />
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
 
