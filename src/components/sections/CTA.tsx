@@ -20,7 +20,8 @@ export function CTA() {
       ref={ref}
       className="relative text-white py-14 sm:py-20 overflow-hidden texture-grain"
       style={{
-        background: "linear-gradient(170deg, #022766 0%, #011d52 35%, #010f29 100%)",
+        background: "linear-gradient(180deg, #022766 0%, #011d52 40%, #010f29 100%)",
+        marginBottom: "-2px",
       }}
     >
       {/* Backgrounds */}
